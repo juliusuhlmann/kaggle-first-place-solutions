@@ -1,28 +1,26 @@
 # 100 Kaggle first-place solutions
 
-A dataset of the models, methods and techniques used in the 100 most recent Kaggle competitions with a published first-place writeup.
+This is the data behind my write-up on what wins Kaggle competitions. It covers the last 100 competitions that have a published first-place writeup, with deadlines from November 2023 to September 2026.
 
 ## Files
 
-- **`solutions.csv`**: one row per winning solution (100 rows).
-  `sample_number`, `title`, `slug`, `deadline`, `publication_date` (of the writeup), `kind` (Featured / Research / Playground), `domain` (structured / unstructured / llm / other), `subdomain`, `models`, `methods`, `tuning`, `source_access` (full / partial / mirrored / unavailable), `source_url`, `pipeline` (short summary), `notes`.
-- **`techniques.csv`**: one row per technique per writeup (1,161 rows from 98 readable writeups).
-  `slug`, `i` (row index within the writeup), `canonical` (id of the recurring technique the row was grouped under, if any), `trick`, `stage`, `mainstream` (yes / partly / no), `worked`, `gain` (as reported), `what`, `why`, `when`, `quote` (verbatim from the writeup).
-- **`usage.json`**: counts of solutions per domain using each model family, model and method. Shares in the accompanying essay are these counts divided by `n`.
+`solutions.csv` has one row per winning solution. It lists the competition, its type (Featured, Research or Playground) and domain (structured, unstructured, llm or other), the final models and methods, and a link to the writeup. `source_access` shows whether I could read the full writeup, only part of it, a mirrored copy, or nothing.
 
-## Methodology
+`techniques.csv` has one row for each technique mentioned in a writeup, 1,161 rows in total from the 98 writeups I could read. Each row says what the winners did, why it helped and when it applies, and includes a short quote from the writeup. `canonical` links rows that describe the same recurring trick. `mainstream` is a rough guess at whether an average data scientist would already know the technique.
 
-**Sample.** The latest 100 Kaggle competitions with a published first-place writeup, with deadlines from 2023-11-30 to 2026-09-29 (cutoff 2026-10-05). Featured, Research and Playground competitions with finalized leaderboards are included. Community, classroom and judged-only events are excluded. Domains: 40 structured, 31 unstructured, 17 LLM, 12 other (optimization and simulation).
+`usage.json` counts how many solutions in each domain used each model and method. These counts are the source of the percentages in the write-up: XGBoost appears in 18 of 40 structured solutions, for example, which is 45%. `tagged` is the count from the first pass alone (see below), and `na` lists the domains where a method doesn't apply.
 
-**Sources.** Competition metadata comes from [Meta Kaggle](https://www.kaggle.com/datasets/kaggle/meta-kaggle). Writeups were found through [faridrashidi/kaggle-solutions](https://github.com/faridrashidi/kaggle-solutions), with [a Hugging Face mirror of writeups](https://huggingface.co/datasets/t2ance/mle-skills-kaggle-writeups-clean) as a fallback. Each row links to its primary source.
+## How it was made
 
-**Coding.** There were two passes:
-1. *Solution audit* (`solutions.csv`): GPT-6 Luna agents (low effort) tagged the domain, final models and methods of each solution. I reviewed the output by hand and corrected rank and source mismatches, as well as models that had been tried but were not part of the final solution.
-2. *Technique extraction* (`techniques.csv`): Claude Sonnet 5.5 agents (medium effort) read each full writeup and recorded every concrete technique, each with a verbatim quote. A script checked every quote against the source text. I grouped recurring techniques by hand.
+I took the competition list from [Meta Kaggle](https://www.kaggle.com/datasets/kaggle/meta-kaggle) and found writeups through [faridrashidi/kaggle-solutions](https://github.com/faridrashidi/kaggle-solutions), plus a [Hugging Face mirror](https://huggingface.co/datasets/t2ance/mle-skills-kaggle-writeups-clean) for a few that wouldn't load. I left out community and judged-only competitions. The final set has 40 structured, 31 unstructured, 17 LLM and 12 optimization or simulation competitions.
 
-`usage.json` combines both passes. A method counts if the audit tagged it or an extracted technique that worked describes it.
+The data comes from two passes with LLM agents:
 
-**Caveats.**
-- The counts reflect what authors reported. A missing tag means "not reported", not "not used", so all shares are lower bounds.
-- Two writeups could not be read, and eight predictive solutions have no verified final model.
-- `mainstream` is the extraction model's judgment of whether a typical data scientist would know the technique. It is not a survey of practitioners.
+1. GPT-6 Luna agents (low effort) tagged each solution's domain, models and methods. I then checked their output by hand. The main fixes were wrong links and models that were tried but didn't make it into the final submission.
+2. Claude Sonnet 5.5 agents (medium effort) read every writeup in full and wrote down each technique with a supporting quote. A script checked that every quote appears in the writeup, and I grouped repeated techniques by hand.
+
+A method counts in `usage.json` if either pass found it.
+
+## Limitations
+
+Winners don't write down everything they did, so read the numbers as minimums. A missing tag means the writeup didn't mention it, not that it wasn't used. Two writeups couldn't be read at all, and a few solutions don't say which model they ended up with (`unknownModels` in `usage.json`).
