@@ -1,0 +1,458 @@
+{
+  "n": {
+    "structured": 40,
+    "unstructured": 31,
+    "llm": 17
+  },
+  "unknownModels": {
+    "structured": 7,
+    "unstructured": 2,
+    "llm": 0
+  },
+  "families": [
+    {
+      "name": "Trees",
+      "counts": {
+        "structured": 24,
+        "unstructured": 2,
+        "llm": 1
+      }
+    },
+    {
+      "name": "MLP / tabular neural nets",
+      "counts": {
+        "structured": 14,
+        "unstructured": 3,
+        "llm": 0
+      }
+    },
+    {
+      "name": "Linear / logistic",
+      "counts": {
+        "structured": 9,
+        "unstructured": 3,
+        "llm": 0
+      }
+    },
+    {
+      "name": "AutoGluon (mixed toolkit)",
+      "counts": {
+        "structured": 4,
+        "unstructured": 1,
+        "llm": 0
+      }
+    },
+    {
+      "name": "CNN / U-Net",
+      "counts": {
+        "structured": 5,
+        "unstructured": 13,
+        "llm": 0
+      }
+    },
+    {
+      "name": "Encoder / vision transformers",
+      "counts": {
+        "structured": 5,
+        "unstructured": 14,
+        "llm": 0
+      }
+    },
+    {
+      "name": "Decoder LLMs",
+      "counts": {
+        "structured": 0,
+        "unstructured": 0,
+        "llm": 17
+      }
+    }
+  ],
+  "models": [
+    {
+      "name": "XGBoost",
+      "counts": {
+        "structured": 18,
+        "unstructured": 1,
+        "llm": 0
+      }
+    },
+    {
+      "name": "CatBoost",
+      "counts": {
+        "structured": 13,
+        "unstructured": 0,
+        "llm": 1
+      }
+    },
+    {
+      "name": "LightGBM",
+      "counts": {
+        "structured": 13,
+        "unstructured": 0,
+        "llm": 0
+      }
+    },
+    {
+      "name": "MLP",
+      "counts": {
+        "structured": 13,
+        "unstructured": 3,
+        "llm": 0
+      }
+    },
+    {
+      "name": "TabM",
+      "counts": {
+        "structured": 7,
+        "unstructured": 0,
+        "llm": 0
+      }
+    },
+    {
+      "name": "CNN",
+      "counts": {
+        "structured": 4,
+        "unstructured": 11,
+        "llm": 0
+      }
+    },
+    {
+      "name": "U-Net",
+      "counts": {
+        "structured": 1,
+        "unstructured": 6,
+        "llm": 0
+      }
+    },
+    {
+      "name": "Transformer",
+      "counts": {
+        "structured": 4,
+        "unstructured": 4,
+        "llm": 0
+      }
+    },
+    {
+      "name": "DINO",
+      "counts": {
+        "structured": 0,
+        "unstructured": 4,
+        "llm": 0
+      }
+    },
+    {
+      "name": "ViT",
+      "counts": {
+        "structured": 0,
+        "unstructured": 3,
+        "llm": 0
+      }
+    },
+    {
+      "name": "Qwen",
+      "counts": {
+        "structured": 0,
+        "unstructured": 0,
+        "llm": 10
+      }
+    },
+    {
+      "name": "Gemma",
+      "counts": {
+        "structured": 0,
+        "unstructured": 0,
+        "llm": 5
+      }
+    },
+    {
+      "name": "Llama",
+      "counts": {
+        "structured": 0,
+        "unstructured": 0,
+        "llm": 3
+      }
+    },
+    {
+      "name": "DeepSeek",
+      "counts": {
+        "structured": 0,
+        "unstructured": 0,
+        "llm": 3
+      }
+    }
+  ],
+  "methods": [
+    {
+      "id": "cv",
+      "name": "Cross-validation",
+      "counts": {
+        "structured": 32,
+        "unstructured": 18,
+        "llm": 7
+      },
+      "na": [],
+      "tagged": {
+        "structured": 20,
+        "unstructured": 11,
+        "llm": 3
+      }
+    },
+    {
+      "id": "fe",
+      "name": "Feature engineering",
+      "counts": {
+        "structured": 34,
+        "unstructured": 7,
+        "llm": 1
+      },
+      "na": [],
+      "tagged": {
+        "structured": 32,
+        "unstructured": 7,
+        "llm": 1
+      }
+    },
+    {
+      "id": "ensemble",
+      "name": "Ensembling",
+      "counts": {
+        "structured": 34,
+        "unstructured": 26,
+        "llm": 8
+      },
+      "na": [],
+      "tagged": {
+        "structured": 30,
+        "unstructured": 24,
+        "llm": 7
+      }
+    },
+    {
+      "id": "stack",
+      "name": "Stacking or learned blend weights",
+      "counts": {
+        "structured": 26,
+        "unstructured": 4,
+        "llm": 0
+      },
+      "na": [],
+      "tagged": {
+        "structured": 18,
+        "unstructured": 2,
+        "llm": 0
+      }
+    },
+    {
+      "id": "hpo",
+      "name": "Hyperparameter search",
+      "counts": {
+        "structured": 9,
+        "unstructured": 2,
+        "llm": 0
+      },
+      "na": [],
+      "tagged": {
+        "structured": 4,
+        "unstructured": 1,
+        "llm": 0
+      }
+    },
+    {
+      "id": "pretrained",
+      "name": "Pretrained backbone / transfer learning",
+      "counts": {
+        "structured": 1,
+        "unstructured": 17,
+        "llm": 2
+      },
+      "na": [
+        "llm"
+      ],
+      "tagged": {
+        "structured": 0,
+        "unstructured": 13,
+        "llm": 0
+      }
+    },
+    {
+      "id": "sft",
+      "name": "Fine-tuning (full or SFT)",
+      "counts": {
+        "structured": 0,
+        "unstructured": 1,
+        "llm": 10
+      },
+      "na": [],
+      "tagged": {
+        "structured": 0,
+        "unstructured": 1,
+        "llm": 7
+      }
+    },
+    {
+      "id": "lora",
+      "name": "LoRA / QLoRA",
+      "counts": {
+        "structured": 0,
+        "unstructured": 0,
+        "llm": 5
+      },
+      "na": [],
+      "tagged": {
+        "structured": 0,
+        "unstructured": 0,
+        "llm": 2
+      }
+    },
+    {
+      "id": "distill",
+      "name": "Distillation",
+      "counts": {
+        "structured": 0,
+        "unstructured": 3,
+        "llm": 4
+      },
+      "na": [],
+      "tagged": {
+        "structured": 0,
+        "unstructured": 1,
+        "llm": 2
+      }
+    },
+    {
+      "id": "quant",
+      "name": "Quantization",
+      "counts": {
+        "structured": 0,
+        "unstructured": 2,
+        "llm": 8
+      },
+      "na": [],
+      "tagged": {
+        "structured": 0,
+        "unstructured": 0,
+        "llm": 3
+      }
+    },
+    {
+      "id": "aug",
+      "name": "Data augmentation",
+      "counts": {
+        "structured": 4,
+        "unstructured": 15,
+        "llm": 3
+      },
+      "na": [],
+      "tagged": {
+        "structured": 3,
+        "unstructured": 9,
+        "llm": 2
+      }
+    },
+    {
+      "id": "tta",
+      "name": "Test-time augmentation",
+      "counts": {
+        "structured": 0,
+        "unstructured": 11,
+        "llm": 2
+      },
+      "na": [],
+      "tagged": {
+        "structured": 0,
+        "unstructured": 7,
+        "llm": 0
+      }
+    },
+    {
+      "id": "pseudo",
+      "name": "Pseudo-labelling",
+      "counts": {
+        "structured": 2,
+        "unstructured": 8,
+        "llm": 3
+      },
+      "na": [],
+      "tagged": {
+        "structured": 0,
+        "unstructured": 6,
+        "llm": 0
+      }
+    },
+    {
+      "id": "external",
+      "name": "External or original data",
+      "counts": {
+        "structured": 14,
+        "unstructured": 8,
+        "llm": 2
+      },
+      "na": [],
+      "tagged": {
+        "structured": 8,
+        "unstructured": 8,
+        "llm": 2
+      }
+    },
+    {
+      "id": "synthetic",
+      "name": "Synthetic training data",
+      "counts": {
+        "structured": 0,
+        "unstructured": 4,
+        "llm": 6
+      },
+      "na": [],
+      "tagged": {
+        "structured": 0,
+        "unstructured": 3,
+        "llm": 6
+      }
+    },
+    {
+      "id": "retrieval",
+      "name": "Retrieval / reranking",
+      "counts": {
+        "structured": 0,
+        "unstructured": 7,
+        "llm": 2
+      },
+      "na": [],
+      "tagged": {
+        "structured": 0,
+        "unstructured": 4,
+        "llm": 2
+      }
+    },
+    {
+      "id": "post",
+      "name": "Post-processing",
+      "counts": {
+        "structured": 12,
+        "unstructured": 22,
+        "llm": 8
+      },
+      "na": [],
+      "tagged": {
+        "structured": 8,
+        "unstructured": 18,
+        "llm": 7
+      }
+    },
+    {
+      "id": "calib",
+      "name": "Calibration",
+      "counts": {
+        "structured": 4,
+        "unstructured": 3,
+        "llm": 0
+      },
+      "na": [],
+      "tagged": {
+        "structured": 2,
+        "unstructured": 1,
+        "llm": 0
+      }
+    }
+  ]
+}
