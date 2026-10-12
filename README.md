@@ -6,7 +6,7 @@ Data behind the write-up on what wins Kaggle competitions. It covers the last 10
 
 `solutions.csv` has one row per winning solution. It lists the competition, its type (Featured, Research or Playground) and domain (structured, unstructured, llm or other), the final models and methods, and a link to the writeup. `source_access` shows whether the full writeup was readable, only part of it, a mirrored copy, or nothing.
 
-`techniques.csv` has one row for each technique mentioned in a writeup, 1,161 rows in total from the 98 readable writeups. Each row says what the winners did, why it helped and when it applies, and includes a short quote from the writeup. `canonical` links rows that describe the same recurring trick. `mainstream` is a rough guess at whether an average data scientist would already know the technique.
+`techniques.csv` has one row for each technique mentioned in a writeup, 1,161 rows in total from the 98 readable writeups. Each row says what the winners did, why it helped and when it applies, and includes a short quote from the writeup. `competition_id` matches the same column in `solutions.csv` (it is the competition's name in its Kaggle URL). `canonical` links rows that describe the same recurring trick. `mainstream` is a rough guess at whether an average data scientist would already know the technique.
 
 `usage.json` counts how many solutions in each domain used each model and method. These counts are the source of the percentages in the write-up: XGBoost appears in 18 of 40 structured solutions, for example, which is 45%. `tagged` is the count from the first pass alone (see below), and `na` lists the domains where a method doesn't apply.
 
