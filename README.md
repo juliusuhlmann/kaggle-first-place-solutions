@@ -1,6 +1,6 @@
 # 100 Kaggle first-place solutions
 
-Data behind the write-up on what wins Kaggle competitions. It covers the last 100 competitions with a published first-place writeup, with deadlines from November 2023 to September 2026.
+Data covers the last 100 kaggle competitions with a published first-place writeup, with deadlines from November 2023 to September 2026.
 
 ## Files
 
